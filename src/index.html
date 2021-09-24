@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>webpack demo</title>
+    <script>
+        function addMeta(name,content){//手动添加mate标签
+            let meta = document.createElement('meta');
+            meta.content=content;
+            meta.name=name;
+            document.getElementsByTagName('head')[0].appendChild(meta);
+        }
+        !(function () {
+            const DEFAULT_BASE_WIDTH = 750
+            const customViewport = ''
+            const baseWidth = customViewport ? customViewport.baseWidth : DEFAULT_BASE_WIDTH
+            const ratio = baseWidth / DEFAULT_BASE_WIDTH
+            const phoneScale = parseInt(window.screen.width) / baseWidth * ratio;
+            const content = `width=${baseWidth}, minimum-scale=${phoneScale}, maximum-scale=${phoneScale}, user-scalable=no`
+            addMeta('viewport', content)
+        })();
+    </script>
+</head>
+<body>
+    <p>webpack demo</p>
+    <div class="rect"></div>
+</body>
+</html>
