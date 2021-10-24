@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pay</title>
+    <script>
+        function addMeta(name,content){//手动添加mate标签
+            let meta = document.createElement('meta');
+            meta.content=content;
+            meta.name=name;
+            document.getElementsByTagName('head')[0].appendChild(meta);
+        }
+        !(function () {
+            const DEFAULT_BASE_WIDTH = 750
+            const customViewport = ''
+            const baseWidth = customViewport ? customViewport.baseWidth : DEFAULT_BASE_WIDTH
+            const ratio = baseWidth / DEFAULT_BASE_WIDTH
+            const phoneScale = parseInt(window.screen.width) / baseWidth * ratio;
+            const content = `width=${baseWidth}, minimum-scale=${phoneScale}, maximum-scale=${phoneScale}, user-scalable=no`
+            addMeta('viewport', content)
+        })();
+    </script>
+</head>
+<body>
+    <div class="scroll-wrapper">
+        <div class="scroll-content">
+            <div>
+                <div class="slider-wrapper">
+                    <!-- <header class="header">
+                        <div class="container logo">
+                            <img src="./base/image/folder.png" alt="country">
+                        </div>
+                        <div class="country logo">
+                            <img src="./base/image/country.png" alt="country">
+                        </div>
+                    </header> -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide mask">
+                                <img src="./base/image/mask.webp" class="img-small">
+                                <!-- <div class="bg1 img-large" data-large="./base/image/banneer_1.webp"></div> -->
+                            </div>
+                            <div class="swiper-slide mask">
+                                <img src="./base/image/mask.webp" class="img-small">
+                                <!-- <div class="bg2 img-large" data-large="./base/image/banneer_2.webp"></div> -->
+                            </div>
+                            <div class="swiper-slide mask">
+                                <img src="./base/image/mask.webp" class="img-small">
+                                <!-- <div class="bg3 img-large" data-large="./base/image/banneer_3.webp"></div> -->
+                            </div>
+                        </div>
+                        <div class="swiper-button-next-arrow"></div>
+                        <div class="swiper-button-prev-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
